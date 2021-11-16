@@ -21,9 +21,9 @@ const accounts = testkeys.map((v) => {
     }
 })
 
-describe('test', function () {
-    describe('simple sign', function () {
-        it('simple sign', function(){
+describe('Test Signing', function () {
+    describe('Simple signing', function () {
+        it('Simple signing', function(){
             const tx = {}
             tx.Account = accounts[0].address
             tx.Destination = accounts[1].address
@@ -33,7 +33,31 @@ describe('test', function () {
             assert( r.signedTransaction === '732103A80FB3AAC8F20ABAFB1758BBF8AF2B06AAB3182A1B4584F839BD4640587101FF74473045022100CF8984011CD85AA00516F0FEFDD48DC337ABF4D394C55ADECA4F86220217BD0602200882DEE7D55D95F58D83B46D4FF00070FC6B524355D952D623B985A632178B3D8114A71156E659A1078C600E195386C159610AA280D88314DE1F8C18D86B47BE860B4868905CA4E45450A45A');
         })
     })
-    describe('multisig sign', function () {
+    describe('NFT signing', function () {
+        it('Simple NFT signing', function(){
+            const tx = {
+                TransactionType: 'NFTokenAcceptOffer',
+                Account: 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
+                Issuer: 'rNCFjv8Ek5oDrNiMJ3pw6eLLFtMjZLJnf2',
+                Flags: 2147483659,
+                Fee: '10',
+                Memos: [
+                    {
+                        Memo: {
+                            MemoType: '687474703a2f2f6578616d706c652e636f6d2f6d656d6f2f67656e65726963',
+                            MemoData: '72656E74'
+                        }
+                    }
+                ]
+            }
+            const txJSON = JSON.stringify(tx)
+            const r = sign(txJSON, accounts[0].keypair)
+            console.log(r)
+            assert( r.id === '510E2B78CE0BC14FA613136914BD101EBB2E125BE7E127E0D6ED48F52E75212A');
+            assert( r.signedTransaction === '12001D228000000B68400000000000000A732103A80FB3AAC8F20ABAFB1758BBF8AF2B06AAB3182A1B4584F839BD4640587101FF74473045022100A8C35135BECFC51A3613151B5F6F6CE21F1F4AA20343E082DBE3AF54E3F142A102200F2C3BF7800BD34C54DD400809790A5CD5210C2D668E514DBF6B83867AEFE11081140A20B3C85F482532A9578DBB3950B85CA06594D1841495F14B0E44F78A264E41713C64B5F89242540EE2F9EA7C1F687474703A2F2F6578616D706C652E636F6D2F6D656D6F2F67656E657269637D0472656E74E1F1');
+        })
+    })
+    describe('Multisig Signing', function () {
         it('2 sign', function(){
             const tx = {}
             const option = { signAs: accounts[4].address}

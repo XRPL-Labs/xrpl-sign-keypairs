@@ -1,7 +1,7 @@
 {
   "name": "ripple-sign-keypairs",
-  "version": "1.0.2",
-  "description": "ripple transaction sign for keypairs",
+  "version": "2.0.0",
+  "description": "XRPL transaction signing",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/you21979/node-ripple-sign-keypairs.git"
+    "url": "git+https://github.com/XRPL-Labs/xrpl-sign-keypairs.git"
   },
   "author": "Yuki Akiyama",
   "keywords": [
@@ -35,7 +35,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/you21979/node-ripple-sign-keypairs/issues"
+    "url": "https://github.com/XRPL-Labs/xrpl-sign-keypairs/issues"
   },
-  "homepage": "https://github.com/you21979/node-ripple-sign-keypairs#readme"
+  "homepage": "https://github.com/XRPL-Labs/xrpl-sign-keypairs#readme"
 }
