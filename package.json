@@ -8,14 +8,14 @@
   },
   "dependencies": {
     "big-integer": "latest",
-    "ripple-binary-codec": "latest",
+    "ripple-binary-codec": "^1.3.0",
     "ripple-bs58check": "latest",
     "ripple-hashes": "latest",
     "ripple-keypairs": "latest"
   },
   "devDependencies": {
-    "istanbul": "",
     "coveralls": "",
+    "istanbul": "",
     "mocha": ""
   },
   "scripts": {
