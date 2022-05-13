@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "big-integer": "latest",
-    "ripple-binary-codec": "^1.3.0",
+    "ripple-binary-codec": "^1.4.0",
     "ripple-bs58check": "latest",
     "ripple-hashes": "latest",
     "ripple-keypairs": "latest"
