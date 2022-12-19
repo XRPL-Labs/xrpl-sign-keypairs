@@ -1,6 +1,6 @@
 'use strict';
 const sign = require("..");
-const sortSigner = require("../lib/sort_signer");
+// const sortSigner = require("../lib/sort_signer");
 const keypairs = require("ripple-keypairs");
 const assert = require('assert');
 
@@ -52,7 +52,7 @@ describe('Test Signing', function () {
             }
             const txJSON = JSON.stringify(tx)
             const r = sign(txJSON, accounts[0].keypair)
-            console.log(r)
+            // console.log(r)
             assert( r.id === '510E2B78CE0BC14FA613136914BD101EBB2E125BE7E127E0D6ED48F52E75212A');
             assert( r.signedTransaction === '12001D228000000B68400000000000000A732103A80FB3AAC8F20ABAFB1758BBF8AF2B06AAB3182A1B4584F839BD4640587101FF74473045022100A8C35135BECFC51A3613151B5F6F6CE21F1F4AA20343E082DBE3AF54E3F142A102200F2C3BF7800BD34C54DD400809790A5CD5210C2D668E514DBF6B83867AEFE11081140A20B3C85F482532A9578DBB3950B85CA06594D1841495F14B0E44F78A264E41713C64B5F89242540EE2F9EA7C1F687474703A2F2F6578616D706C652E636F6D2F6D656D6F2F67656E657269637D0472656E74E1F1');
         })
