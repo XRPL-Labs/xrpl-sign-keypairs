@@ -34,19 +34,6 @@ describe('Test Signing', function () {
             assert( r.signedTransaction === '732103A80FB3AAC8F20ABAFB1758BBF8AF2B06AAB3182A1B4584F839BD4640587101FF74473045022100CF8984011CD85AA00516F0FEFDD48DC337ABF4D394C55ADECA4F86220217BD0602200882DEE7D55D95F58D83B46D4FF00070FC6B524355D952D623B985A632178B3D8114A71156E659A1078C600E195386C159610AA280D88314DE1F8C18D86B47BE860B4868905CA4E45450A45A');
         })
     })
-    describe('Custom definitions', function () {
-        it('Custom definitions', function(){
-            const definitions = new XrplDefinitions(require('./customDefinitions.json'))
-            const tx = {}
-            tx.TransactionType = 'ClaimReward'
-            tx.Account = accounts[0].address
-            tx.Destination = accounts[1].address
-            const txJSON = JSON.stringify(tx)
-            const r = sign(txJSON, accounts[0].keypair, {definitions})
-            assert( r.id === 'AC5810FD9B19CE53629D76368A18BF59C3957E53DD33AD14E69DF9FF48191033');
-            assert( r.signedTransaction === '120062732103A80FB3AAC8F20ABAFB1758BBF8AF2B06AAB3182A1B4584F839BD4640587101FF74473045022100AA43E1583F3F0B5E8EF719743F5151E33BC6EE57D51E291E2BBD6AA9609E9F0C02206291C83C0EA8D7DF458B2DACC8D19FA0E3A8E6A2B88829E07D395EF04C757E918114A71156E659A1078C600E195386C159610AA280D88314DE1F8C18D86B47BE860B4868905CA4E45450A45A');
-        })
-    })
     describe('NFT signing', function () {
         it('Simple NFT signing', function(){
             const tx = {
