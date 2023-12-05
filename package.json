@@ -1,6 +1,6 @@
 {
   "name": "xrpl-sign-keypairs",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "XRPL transaction signing",
   "main": "index.js",
   "directories": {
