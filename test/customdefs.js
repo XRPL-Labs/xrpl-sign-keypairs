@@ -2,7 +2,7 @@
 const sign = require("..");
 // const sortSigner = require("../lib/sort_signer");
 const keypairs = require("ripple-keypairs");
-const {XrplDefinitions} = require('ripple-binary-codec');
+const {XrplDefinitions} = require('xrpl-binary-codec-prerelease');
 const assert = require('assert');
 
 const testkeys = [
